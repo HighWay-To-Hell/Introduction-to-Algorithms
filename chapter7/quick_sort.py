@@ -3,14 +3,14 @@ quick_sort
 """
 
 
-def quicksort(nums: list, l, r):
+def quick_sort(nums: list, l, r):
     if l < r:
-        m = partion(nums, l, r)
-        quicksort(nums, l, m)
-        quicksort(nums, m + 1, r)
+        m = partition(nums, l, r)
+        quick_sort(nums, l, m)
+        quick_sort(nums, m + 1, r)
 
 
-def partion(nums, l, r):
+def partition(nums, l, r):
     i = l - 1
     for j in range(l, r, 1):
         if nums[j] <= nums[r]:
@@ -29,7 +29,7 @@ def swap(nums, i, j):
 def main():
     nums = [-1, 0, 1, 2, -3]
     print(nums)
-    quicksort(nums, 0, len(nums) - 1)
+    quick_sort(nums, 0, len(nums) - 1)
     print(nums)
 
 
